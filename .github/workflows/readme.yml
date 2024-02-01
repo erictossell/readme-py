@@ -1,0 +1,32 @@
+name: Readme Update
+
+on: 
+  workflow_run:
+    workflows: ["Flake Check"]
+    types:
+      - completed
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install Nix
+      uses: cachix/install-nix-action@v23
+      with: 
+        nix_path: nixpkgs=channel:nixos-unstable
+
+    - name: Nix build
+      run: nix build
+
+    - name: Generate readme
+      run: result/bin/readme-py --dir --links --flake-show --header .header --usage --use-nix-build
+
+    - name: Commit and push
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Readme update"
