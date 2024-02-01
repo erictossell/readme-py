@@ -1,3 +1,12 @@
+# readme-py
+
+A simple python script to generate a README.md file.
+
+## Example
+
+```bash
+readme-py --dir --links --header header.md --nix
+```
 
 
 ### Directory Tree
@@ -30,7 +39,7 @@ options:
 ### Nix Flake Show
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=ff915bb266f71b92254c2a89ccf467748ea57d0a&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=f90e5d64494cf246f100795d51b2a0fe30cef10a&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
