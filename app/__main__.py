@@ -98,19 +98,19 @@ def generate_readme(
     if include_dir_tree:
         dir_tree = directory_tree(path, make_links=include_links)
         readme_content += (
-            "\n`Directory Tree`\n\n"
+            "\n### Directory Tree\n\n"
             + ("\n```bash\n" + dir_tree + "\n```" if not include_links else dir_tree)
             + "\n"
         )
 
     if include_cli_usage:
         cli_usage_output = capture_cli_usage(path, use_nix=use_nix_for_cli)
-        readme_content += "\n## CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
+        readme_content += "\n### CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
 
     if include_nix:
         flake_show_output = run_command("nix flake show . --all-systems")
         readme_content += (
-            "\n## Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
+            "\n### Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
         )
 
     return readme_content

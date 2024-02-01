@@ -8,11 +8,11 @@ A simple python script to generate a README.md file.
 readme-py --dir --links --header header.md --nix
 ```
 
-`Directory Tree`
+### Directory Tree
 
 [app](app/)
 
-## CLI Usage
+### CLI Usage
 
 ```bash
 usage: readme-py [-h] [--dir] [--header HEADER] [--nix] [--author AUTHOR]
@@ -33,7 +33,7 @@ options:
 
 ```
 
-## Nix Flake Show
+### Nix Flake Show
 
 ```nix
 git+file:///home/eriim/repos/py/readme-py
