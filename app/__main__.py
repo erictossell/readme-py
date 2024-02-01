@@ -16,6 +16,21 @@ def run_command(command):
     return strip_ansi_sequences(result.stdout)
 
 
+def capture_cli_usage(project_root, use_nix=False):
+    """Dynamically determine and run the `--help` command for the project."""
+    if use_nix:
+        # Directly specifying the command for nix projects
+        command = "nix build"
+        run_command(command)
+
+    # Assuming `project_root` has an executable CLI application
+    command = f"{os.path.join(project_root, 'result/bin/readme-py')} --help"
+    try:
+        return run_command(command)
+    except subprocess.CalledProcessError as e:
+        return f"Error running command: {e}"
+
+
 def git_tracked_directories(base_path):
     """Get a list of directories tracked by Git, excluding hidden directories."""
     try:
@@ -64,6 +79,8 @@ def generate_readme(
     markdown_prefix_file,
     author=None,
     repo_name=None,
+    include_cli_usage=False,
+    use_nix_for_cli=False,
 ):
     existing_content = ""
     if markdown_prefix_file and os.path.exists(markdown_prefix_file):
@@ -85,6 +102,10 @@ def generate_readme(
             + ("\n```bash\n" + dir_tree + "\n```" if not include_links else dir_tree)
             + "\n"
         )
+
+    if include_cli_usage:
+        cli_usage_output = capture_cli_usage(path, use_nix=use_nix_for_cli)
+        readme_content += "\n## CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
 
     if include_nix:
         flake_show_output = run_command("nix flake show . --all-systems")
@@ -109,6 +130,14 @@ def main():
     parser.add_argument(
         "--links", help="Turn directory tree into Markdown links", action="store_true"
     )
+    parser.add_argument(
+        "--cli-usage", help="Include CLI application usage", action="store_true"
+    )
+    parser.add_argument(
+        "--use-nix",
+        help="Use nix to run the CLI help command",
+        action="store_true",
+    )
     args = parser.parse_args()
 
     readme_exists = os.path.exists("README.md")
@@ -120,6 +149,8 @@ def main():
         args.header,
         args.author,
         args.title,
+        include_cli_usage=args.cli_usage,
+        use_nix_for_cli=args.use_nix,
     )
 
     with open("README.md", "w") as f:
