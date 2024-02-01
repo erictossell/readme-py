@@ -16,7 +16,7 @@ def run_command(command):
     return strip_ansi_sequences(result.stdout)
 
 
-def capture_cli_usage(project_root, use_nix=False):
+def capture_cli_usage(project_root, app_name, use_nix=False):
     """Dynamically determine and run the `--help` command for the project."""
     if use_nix:
         # Directly specifying the command for nix projects
@@ -24,7 +24,7 @@ def capture_cli_usage(project_root, use_nix=False):
         run_command(command)
 
     # Assuming `project_root` has an executable CLI application
-    command = f"{os.path.join(project_root, 'result/bin/readme-py')} --help"
+    command = f"{os.path.join(project_root, f'result/bin/{app_name}')} --help"
     try:
         return run_command(command)
     except subprocess.CalledProcessError as e:
@@ -71,6 +71,10 @@ def directory_tree(path, make_links=False):
     return "\n".join(tree)
 
 
+def get_repo_name():
+    return os.path.basename(os.path.normpath(os.getcwd()))
+
+
 def generate_readme(
     path,
     include_dir_tree,
@@ -87,13 +91,7 @@ def generate_readme(
         with open(markdown_prefix_file, "r") as f:
             existing_content = f.read()
 
-    readme_content = existing_content
-
-    if repo_name:
-        readme_content += f"##  {repo_name} \n"
-
-    if author:
-        readme_content += f"\n### Author: {author} \n"
+    readme_content = existing_content + "\n"
 
     if include_dir_tree:
         dir_tree = directory_tree(path, make_links=include_links)
@@ -104,7 +102,7 @@ def generate_readme(
         )
 
     if include_cli_usage:
-        cli_usage_output = capture_cli_usage(path, use_nix=use_nix_for_cli)
+        cli_usage_output = capture_cli_usage(path, repo_name, use_nix=use_nix_for_cli)
         readme_content += "\n### CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
 
     if include_nix:
@@ -112,6 +110,9 @@ def generate_readme(
         readme_content += (
             "\n### Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
         )
+
+    if author:
+        readme_content += f"\n---\n\n👤 **{author}**\n"
 
     return readme_content
 
@@ -123,7 +124,7 @@ def main():
     )
     parser.add_argument("--header", help="Path to the header markdown file", type=str)
     parser.add_argument(
-        "--nix", help="Include nix flake show output", action="store_true"
+        "--flake-show", help="Include nix flake show output", action="store_true"
     )
     parser.add_argument("--author", help="GitHub username", type=str)
     parser.add_argument("--title", help="GitHub repository name", type=str)
@@ -131,26 +132,27 @@ def main():
         "--links", help="Turn directory tree into Markdown links", action="store_true"
     )
     parser.add_argument(
-        "--cli-usage", help="Include CLI application usage", action="store_true"
+        "--usage", help="Include CLI application usage", action="store_true"
     )
     parser.add_argument(
-        "--use-nix",
+        "--use-nix-build",
         help="Use nix to run the CLI help command",
         action="store_true",
     )
     args = parser.parse_args()
 
+    repo_name = args.title if args.title else get_repo_name()
     readme_exists = os.path.exists("README.md")
     readme_content = generate_readme(
         ".",
         args.dir,
         args.links,
-        args.nix,
+        args.flake_show,
         args.header,
         args.author,
-        args.title,
-        include_cli_usage=args.cli_usage,
-        use_nix_for_cli=args.use_nix,
+        repo_name,
+        include_cli_usage=args.usage,
+        use_nix_for_cli=args.use_nix_build,
     )
 
     with open("README.md", "w") as f:
