@@ -1,12 +1,10 @@
+##  Readme-py 
 
-
-## Repository Information
-**User:** Eric Tossell
-**Repository:** Readme-py
-
+### Author: Eric Tossell 
 
 `Directory Tree`
 
+[app](app/)
 
 ## Nix Flake Show
 

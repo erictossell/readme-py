@@ -62,7 +62,7 @@ def generate_readme(
     include_links,
     include_nix,
     markdown_prefix_file,
-    username=None,
+    author=None,
     repo_name=None,
 ):
     existing_content = ""
@@ -72,21 +72,24 @@ def generate_readme(
 
     readme_content = existing_content
 
-    if username and repo_name:
-        readme_content += f"\n\n## Repository Information\n**User:** {username}\n**Repository:** {repo_name}\n"
+    if repo_name:
+        readme_content += f"##  {repo_name} \n"
+
+    if author:
+        readme_content += f"\n### Author: {author} \n"
 
     if include_dir_tree:
         dir_tree = directory_tree(path, make_links=include_links)
         readme_content += (
-            "\n\n`Directory Tree`\n\n"
-            + ("```bash\n" + dir_tree + "\n```" if not include_links else dir_tree)
+            "\n`Directory Tree`\n\n"
+            + ("\n```bash\n" + dir_tree + "\n```" if not include_links else dir_tree)
             + "\n"
         )
 
     if include_nix:
         flake_show_output = run_command("nix flake show . --all-systems")
         readme_content += (
-            "## Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
+            "\n## Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
         )
 
     return readme_content
@@ -95,14 +98,14 @@ def generate_readme(
 def main():
     parser = argparse.ArgumentParser(description="Generate README.md content.")
     parser.add_argument(
-        "--dir-tree", help="Include directory tree structure", action="store_true"
+        "--dir", help="Include directory tree structure", action="store_true"
     )
     parser.add_argument("--header", help="Path to the header markdown file", type=str)
     parser.add_argument(
         "--nix", help="Include nix flake show output", action="store_true"
     )
-    parser.add_argument("--username", help="GitHub username", type=str)
-    parser.add_argument("--repo-name", help="GitHub repository name", type=str)
+    parser.add_argument("--author", help="GitHub username", type=str)
+    parser.add_argument("--title", help="GitHub repository name", type=str)
     parser.add_argument(
         "--links", help="Turn directory tree into Markdown links", action="store_true"
     )
@@ -111,12 +114,12 @@ def main():
     readme_exists = os.path.exists("README.md")
     readme_content = generate_readme(
         ".",
-        args.dir_tree,
+        args.dir,
         args.links,
         args.nix,
         args.header,
-        args.username,
-        args.repo_name,
+        args.author,
+        args.title,
     )
 
     with open("README.md", "w") as f:
