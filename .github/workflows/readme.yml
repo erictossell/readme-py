@@ -24,7 +24,7 @@ jobs:
       run: nix build
 
     - name: Generate readme
-      run: result/bin/readme-py --dir --links --flake-show --header .header --usage --use-nix-build
+      run: result/bin/readme-py --dir --links --flake-show --header header.md --usage --use-nix-build
 
     - name: Commit and push
       uses: stefanzweifel/git-auto-commit-action@v5
