@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "readme-py"
+version = "0.1.0"
+description = "A simple readme generator with nix support."
+authors = ["Eric Tossell <erictossell@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.scripts]
+readme-py = "app.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.packages]]
+include = "app"
