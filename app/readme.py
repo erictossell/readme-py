@@ -54,19 +54,18 @@ def git_tracked_directories(base_path):
 
 
 def directory_tree(path, make_links=False):
-    """Generate a directory tree structure for directories tracked by Git."""
+    """Generate a markdown-style directory tree structure for directories tracked by Git."""
     tree = []
     tracked_dirs = git_tracked_directories(path)
     for dir in tracked_dirs:
         level = dir.count("/")
-        indent = "    " * level  # Using spaces for indentation
+        indent = "  " * level  # Two spaces per level for markdown list indentation
         dir_name = os.path.basename(dir)
-        dir_path = os.path.relpath(dir, path) if make_links else ""
-        tree.append(
-            f"{indent}[{dir_name}]({dir_path}/)\n"
-            if make_links
-            else f"{indent}{dir_name}/\n"
-        )
+        dir_path = os.path.relpath(dir, path) if make_links else dir_name
+        if make_links:
+            tree.append(f"{indent}- [{dir_name}]({dir_path}/)")
+        else:
+            tree.append(f"{indent}- {dir_name}/")
     return "\n".join(tree)
 
 
