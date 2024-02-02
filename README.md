@@ -26,9 +26,11 @@ nix run github:erictossell/readme-py -- --output TEST.md --author erictossell --
 ### Directory Structure
 
 [app](app/)
+
 [test](test/)
 
-### CLI Usage
+
+### Usage
 
 ```
 usage: readme-py [-h] [-a AUTHOR] [-r REPO] [-o OUTPUT] [-d] [-l] [-u] [-fs]
@@ -60,7 +62,7 @@ options:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=8efeb4e49d5db7d2fee9f79b77bf7a9e9b21530c&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=9e2be1b96d6ec110c0e02c0a2ea33e2650d84fd4&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
