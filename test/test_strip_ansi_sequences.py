@@ -1,6 +1,6 @@
 # test_readme_generator.py
 import unittest
-from app import strip_ansi_sequences
+from app.readme import strip_ansi_sequences
 
 
 class TestReadmeGenerator(unittest.TestCase):
