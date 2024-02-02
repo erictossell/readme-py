@@ -1,11 +1,13 @@
 # readme-py
 
-A simple python script to generate a README.md file.
+A simple `python` script to generate a `README.md` file. Expose your project's structure and `cli` usage in a programmatic way.
+
+Easy to use in github actions, `nix` derivations, or any other `nix` build system.
 
 ## Example
 
 ```bash
-readme-py --dir --links --header header.md --nix
+readme-py --dir --links --flake-show --header header.md --footer footer.md
 ```
 # readme-py
 
@@ -40,7 +42,7 @@ options:
 ### Nix Flake Show
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=4411d9073bf16437bc75236a8e22ce76963af687&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=413f2902e28670a3baa3799afc581655bcb15e40&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
@@ -76,7 +78,5 @@ git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=4411d90
 👤 **erictossell**
 
 [![Flake Check](https://github.com/erictossell/readme-py/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/check.yml)
-
 [![Flake Update](https://github.com/erictossell/readme-py/actions/workflows/update.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/update.yml)
-
 [![Readme Update](https://github.com/erictossell/readme-py/actions/workflows/readme.yml/badge.svg)](https://github.com/erictossell/readme-py/actions/workflows/readme.yml)
