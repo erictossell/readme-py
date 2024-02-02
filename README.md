@@ -20,8 +20,8 @@ readme-py --dir --links --flake-show --header header.md --footer footer.md
 
 ```bash
 usage: readme-py [-h] [--dir] [--header HEADER] [--footer FOOTER]
-                 [--flake-show] [--author AUTHOR] [--repo REPO] [--links]
-                 [--usage] [--use-nix-run] [--output OUTPUT]
+                 [--flake-show] [--flake-info] [--author AUTHOR] [--repo REPO]
+                 [--links] [--usage] [--use-nix-run] [--output OUTPUT]
 
 Generate README.md content.
 
@@ -31,12 +31,38 @@ options:
   --header HEADER  Path to the header markdown file
   --footer FOOTER  Path to the footer markdown file
   --flake-show     Include nix flake show output
+  --flake-info     Include nix flake info output
   --author AUTHOR  GitHub username
   --repo REPO      GitHub repository name
   --links          Turn directory tree into Markdown links
   --usage          Include CLI application usage
-  --use-nix-run    Use nix to run the CLI help command
+  --use-nix-run    Use nix to run the CLI help command, requires an author
   --output OUTPUT  Output file to write to
+
+```
+
+### Nix Flake Info
+
+```nix
+Resolved URL:  git+file:///home/eriim/repos/py/readme-py
+Locked URL:    git+file:///home/eriim/repos/py/readme-py
+Description:   Readme generator
+Path:          /nix/store/dz049qb8dx532js0fd64bjsj8rv5z335-source
+Revision:      dc0fcbcb49c04868a5ff0cc2e647e868c4f24302-dirty
+Last modified: 2024-02-01 21:56:32
+Inputs:
+├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
+│   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
+├───nixpkgs: github:NixOS/nixpkgs/97b17f32362e475016f942bbdfda4a4a72a8a652
+└───poetry2nix: github:nix-community/poetry2nix/e0b44e9e2d3aa855d1dd77b06f067cd0e0c3860d
+    ├───flake-utils: github:numtide/flake-utils/ff7b65b44d01cf9ba6a71320833626af21126384
+    │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
+    ├───nix-github-actions: github:nix-community/nix-github-actions/4bb5e752616262457bc7ca5882192a564c0472d2
+    │   └───nixpkgs follows input 'poetry2nix/nixpkgs'
+    ├───nixpkgs follows input 'nixpkgs'
+    ├───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
+    └───treefmt-nix: github:numtide/treefmt-nix/e82f32aa7f06bbbd56d7b12186d555223dc399d1
+        └───nixpkgs follows input 'poetry2nix/nixpkgs'
 
 ```
 

@@ -82,7 +82,8 @@ def generate_readme(
     path,
     include_dir_tree,
     include_links,
-    include_nix,
+    include_flake_show,
+    include_flake_info,
     markdown_prefix_file,
     markdown_footer_file,
     author=None,
@@ -115,7 +116,13 @@ def generate_readme(
         )
         readme_content += "\n### CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
 
-    if include_nix:
+    if include_flake_info:
+        flake_show_output = run_command("nix flake info .")
+        readme_content += (
+            "\n### Nix Flake Info\n\n```nix\n" + flake_show_output + "\n```\n"
+        )
+
+    if include_flake_show:
         flake_show_output = run_command("nix flake show . --all-systems")
         readme_content += (
             "\n### Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
@@ -140,6 +147,9 @@ def main():
     parser.add_argument("--footer", help="Path to the footer markdown file", type=str)
     parser.add_argument(
         "--flake-show", help="Include nix flake show output", action="store_true"
+    )
+    parser.add_argument(
+        "--flake-info", help="Include nix flake info output", action="store_true"
     )
     parser.add_argument("--author", help="GitHub username", type=str)
     parser.add_argument("--repo", help="GitHub repository name", type=str)
@@ -170,6 +180,7 @@ def main():
         args.dir,
         args.links,
         args.flake_show,
+        args.flake_info,
         args.header,
         args.footer,
         args.author,
