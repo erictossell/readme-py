@@ -151,7 +151,7 @@ def main():
     )
     parser.add_argument(
         "--use-nix-run",
-        help="Use nix to run the CLI help command",
+        help="Use nix to run the CLI help command, requires an author",
         action="store_true",
     )
     parser.add_argument(
