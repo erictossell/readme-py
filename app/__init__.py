@@ -145,7 +145,7 @@ def main():
     parser.add_argument(
         "-o",
         "--output",
-        help="Output file to write to",
+        help="Output file to write to, defaults to README.md",
         type=str,
         default="README.md",
     )
@@ -159,7 +159,10 @@ def main():
         action="store_true",
     )
     parser.add_argument(
-        "-u", "--usage", help="Include CLI application usage", action="store_true"
+        "-u",
+        "--usage",
+        help="Include CLI application usage by building with nix",
+        action="store_true",
     )
     parser.add_argument(
         "-fs", "--flake-show", help="Include nix flake show output", action="store_true"
@@ -168,15 +171,15 @@ def main():
         "-fi", "--flake-info", help="Include nix flake info output", action="store_true"
     )
     parser.add_argument(
-        "-hmd", "--header", help="Path to the header markdown file", type=str
+        "-hmd", "--header", help="Path to a header markdown file", type=str
     )
     parser.add_argument(
-        "-fmd", "--footer", help="Path to the footer markdown file", type=str
+        "-fmd", "--footer", help="Path to a footer markdown file", type=str
     )
     parser.add_argument(
         "-unr",
         "--use-nix-run",
-        help="Use nix to run the CLI help command, requires an author",
+        help="Use nix and github to run the CLI help command, requires an author",
         action="store_true",
     )
 
