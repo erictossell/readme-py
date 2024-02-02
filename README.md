@@ -15,15 +15,17 @@ readme-py --dir --links --flake-show --header header.md --footer footer.md
 An example generation of a `README.md` can be generated with the following command:
 
 ```bash
-nix run github:erictossell/readme-py -- --author erictossell --dir --links --usage --flake-info --flake-show --header header.md --footer footer.md 
+nix run github:erictossell/readme-py -- --author erictossell --repo readme-py --dir --links --usage --flake-info --flake-show --header header.md --footer footer.md 
 ```
 
-### Directory Tree
+### Directory
 
 [app](app/)
+
 [test](test/)
 
-### CLI Usage
+
+### Usage
 
 ```bash
 usage: readme-py [-h] [-a AUTHOR] [-r REPO] [-o OUTPUT] [-d] [-l] [-u] [-fs]
@@ -52,15 +54,15 @@ options:
 
 ```
 
-### Nix Flake Info
+### Flake Info
 
 ```nix
 Resolved URL:  git+file:///home/eriim/repos/py/readme-py
 Locked URL:    git+file:///home/eriim/repos/py/readme-py
 Description:   Readme generator
-Path:          /nix/store/nbcsf28j45ymig7gbg946f8m3if1h7pc-source
-Revision:      feafeea1df8805264ba688d044c6208e428ef50d-dirty
-Last modified: 2024-02-01 22:53:40
+Path:          /nix/store/f1g887kkkb4flp6j98rdkhghc6s5077w-source
+Revision:      c545f836c0d1b4c8770e5bba09540834dc78b107-dirty
+Last modified: 2024-02-01 23:05:39
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
@@ -77,7 +79,7 @@ Inputs:
 
 ```
 
-### Nix Flake Show
+### Flake Outputs
 
 ```nix
 git+file:///home/eriim/repos/py/readme-py

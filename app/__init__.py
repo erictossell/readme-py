@@ -67,9 +67,9 @@ def directory_tree(path, make_links=False):
         dir_name = os.path.basename(dir)
         dir_path = os.path.relpath(dir, path) if make_links else ""
         tree.append(
-            f"{indent}[{dir_name}]({dir_path}/)"
+            f"{indent}[{dir_name}]({dir_path}/)\n"
             if make_links
-            else f"{indent}{dir_name}/"
+            else f"{indent}{dir_name}/\n"
         )
     return "\n".join(tree)
 
