@@ -98,7 +98,7 @@ def generate_readme(
 
     readme_content = existing_content
 
-    if repo_name is not None:
+    if repo_name is not None and not readme_content:
         readme_content += f"# {repo_name}\n"
 
     repo_name = repo_name if repo_name else get_repo_name()
@@ -106,7 +106,7 @@ def generate_readme(
     if include_dir_tree:
         dir_tree = directory_tree(path, make_links=include_links)
         readme_content += (
-            "\n### Directory Tree\n\n"
+            "\n### Directory\n\n"
             + ("\n```bash\n" + dir_tree + "\n```" if not include_links else dir_tree)
             + "\n"
         )
@@ -115,18 +115,16 @@ def generate_readme(
         cli_usage_output = capture_cli_usage(
             path, repo_name, author, use_nix=use_nix_for_cli
         )
-        readme_content += "\n### CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
+        readme_content += "\n### Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
 
     if include_flake_info:
         flake_show_output = run_command("nix flake info .")
-        readme_content += (
-            "\n### Nix Flake Info\n\n```nix\n" + flake_show_output + "\n```\n"
-        )
+        readme_content += "\n### Flake Info\n\n```nix\n" + flake_show_output + "\n```\n"
 
     if include_flake_show:
         flake_show_output = run_command("nix flake show . --all-systems")
         readme_content += (
-            "\n### Nix Flake Show\n\n```nix\n" + flake_show_output + "\n```\n"
+            "\n### Flake Outputs\n\n```nix\n" + flake_show_output + "\n```\n"
         )
 
     if author:
