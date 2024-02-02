@@ -1,11 +1,12 @@
 name: Flake Check
 
 on: 
-  workflow_run:
-    workflows: ["Flake Update"]
-    types:
-      - completed
-
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   flake-check:
     runs-on: ubuntu-latest
