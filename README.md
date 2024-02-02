@@ -19,25 +19,29 @@ readme-py --dir --links --flake-show --header header.md --footer footer.md
 ### CLI Usage
 
 ```bash
-usage: readme-py [-h] [--dir] [--header HEADER] [--footer FOOTER]
-                 [--flake-show] [--flake-info] [--author AUTHOR] [--repo REPO]
-                 [--links] [--usage] [--use-nix-run] [--output OUTPUT]
+usage: readme-py [-h] [-d] [-hmd HEADER] [-fmd FOOTER] [-fs] [-fi] [-a AUTHOR]
+                 [-r REPO] [-l] [-u] [-unr] [-o OUTPUT]
 
 Generate README.md content.
 
 options:
-  -h, --help       show this help message and exit
-  --dir            Include directory tree structure
-  --header HEADER  Path to the header markdown file
-  --footer FOOTER  Path to the footer markdown file
-  --flake-show     Include nix flake show output
-  --flake-info     Include nix flake info output
-  --author AUTHOR  GitHub username
-  --repo REPO      GitHub repository name
-  --links          Turn directory tree into Markdown links
-  --usage          Include CLI application usage
-  --use-nix-run    Use nix to run the CLI help command, requires an author
-  --output OUTPUT  Output file to write to
+  -h, --help            show this help message and exit
+  -d, --dir             Include directory tree structure
+  -hmd HEADER, --header HEADER
+                        Path to the header markdown file
+  -fmd FOOTER, --footer FOOTER
+                        Path to the footer markdown file
+  -fs, --flake-show     Include nix flake show output
+  -fi, --flake-info     Include nix flake info output
+  -a AUTHOR, --author AUTHOR
+                        GitHub username
+  -r REPO, --repo REPO  GitHub repository name
+  -l, --links           Turn directory tree into Markdown links
+  -u, --usage           Include CLI application usage
+  -unr, --use-nix-run   Use nix to run the CLI help command, requires an
+                        author
+  -o OUTPUT, --output OUTPUT
+                        Output file to write to
 
 ```
 
@@ -47,9 +51,9 @@ options:
 Resolved URL:  git+file:///home/eriim/repos/py/readme-py
 Locked URL:    git+file:///home/eriim/repos/py/readme-py
 Description:   Readme generator
-Path:          /nix/store/dz049qb8dx532js0fd64bjsj8rv5z335-source
-Revision:      dc0fcbcb49c04868a5ff0cc2e647e868c4f24302-dirty
-Last modified: 2024-02-01 21:56:32
+Path:          /nix/store/ilg7mlxdxw5v0mnhrj8d9ynm6vi4mzz9-source
+Revision:      c05f3846bc5d4735904e1aab3fea0271328783dd-dirty
+Last modified: 2024-02-01 22:13:37
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
