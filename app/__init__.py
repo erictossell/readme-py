@@ -84,6 +84,7 @@ def generate_readme(
     include_links,
     include_nix,
     markdown_prefix_file,
+    markdown_footer_file,
     author=None,
     repo_name=None,
     include_cli_usage=False,
@@ -122,6 +123,10 @@ def generate_readme(
     if author:
         readme_content += f"\n---\n\n👤 **{author}**\n"
 
+    if markdown_footer_file and os.path.exists(markdown_footer_file):
+        with open(markdown_footer_file, "r") as f:
+            readme_content += f.read()
+
     return readme_content
 
 
@@ -131,6 +136,7 @@ def main():
         "--dir", help="Include directory tree structure", action="store_true"
     )
     parser.add_argument("--header", help="Path to the header markdown file", type=str)
+    parser.add_argument("--footer", help="Path to the footer markdown file", type=str)
     parser.add_argument(
         "--flake-show", help="Include nix flake show output", action="store_true"
     )
@@ -157,6 +163,7 @@ def main():
         args.links,
         args.flake_show,
         args.header,
+        args.footer,
         args.author,
         repo_name,
         include_cli_usage=args.usage,
