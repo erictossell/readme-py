@@ -61,7 +61,7 @@ options:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=8169d0ea99c0d5a9c54c3613f9da7a76cdeacd50&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=aa82f3d7788aa7f25c48d73183c3d688fdd4a580&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
