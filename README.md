@@ -4,12 +4,19 @@ A simple `python` script to generate a `README.md` file. Expose your project's s
 
 Easy to use in github actions, `nix` derivations, or any other `nix` build system.
 
+This repo's `README.md` was generated with `readme-py` and `github-actions`. Check out the the simple [`readme.yml`](.github/workflows/readme.yml).
+
 ## Example
 
 ```bash
 readme-py --dir --links --flake-show --header header.md --footer footer.md
 ```
-# readme-py
+
+An example generation of a `README.md` can be generated with the following command:
+
+```bash
+nix run github:erictossell/readme-py -- --author erictossell --dir --links --usage --flake-info --flake-show --header header.md --footer footer.md 
+```
 
 ### Directory Tree
 
@@ -19,29 +26,29 @@ readme-py --dir --links --flake-show --header header.md --footer footer.md
 ### CLI Usage
 
 ```bash
-usage: readme-py [-h] [-d] [-hmd HEADER] [-fmd FOOTER] [-fs] [-fi] [-a AUTHOR]
-                 [-r REPO] [-l] [-u] [-unr] [-o OUTPUT]
+usage: readme-py [-h] [-a AUTHOR] [-r REPO] [-o OUTPUT] [-d] [-l] [-u] [-fs]
+                 [-fi] [-hmd HEADER] [-fmd FOOTER] [-unr]
 
 Generate README.md content.
 
 options:
   -h, --help            show this help message and exit
-  -d, --dir             Include directory tree structure
-  -hmd HEADER, --header HEADER
-                        Path to the header markdown file
-  -fmd FOOTER, --footer FOOTER
-                        Path to the footer markdown file
-  -fs, --flake-show     Include nix flake show output
-  -fi, --flake-info     Include nix flake info output
   -a AUTHOR, --author AUTHOR
                         GitHub username
   -r REPO, --repo REPO  GitHub repository name
-  -l, --links           Turn directory tree into Markdown links
-  -u, --usage           Include CLI application usage
-  -unr, --use-nix-run   Use nix to run the CLI help command, requires an
-                        author
   -o OUTPUT, --output OUTPUT
-                        Output file to write to
+                        Output file to write to, defaults to README.md
+  -d, --dir             Include directory tree structure
+  -l, --links           Turn directory tree into Markdown links
+  -u, --usage           Include CLI application usage by building with nix
+  -fs, --flake-show     Include nix flake show output
+  -fi, --flake-info     Include nix flake info output
+  -hmd HEADER, --header HEADER
+                        Path to a header markdown file
+  -fmd FOOTER, --footer FOOTER
+                        Path to a footer markdown file
+  -unr, --use-nix-run   Use nix and github to run the CLI help command,
+                        requires an author
 
 ```
 
@@ -51,9 +58,9 @@ options:
 Resolved URL:  git+file:///home/eriim/repos/py/readme-py
 Locked URL:    git+file:///home/eriim/repos/py/readme-py
 Description:   Readme generator
-Path:          /nix/store/ilg7mlxdxw5v0mnhrj8d9ynm6vi4mzz9-source
-Revision:      c05f3846bc5d4735904e1aab3fea0271328783dd-dirty
-Last modified: 2024-02-01 22:13:37
+Path:          /nix/store/nbcsf28j45ymig7gbg946f8m3if1h7pc-source
+Revision:      feafeea1df8805264ba688d044c6208e428ef50d-dirty
+Last modified: 2024-02-01 22:53:40
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e

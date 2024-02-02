@@ -98,9 +98,10 @@ def generate_readme(
 
     readme_content = existing_content
 
-    if not repo_name and not existing_content:
-        repo_name = get_repo_name()
-    readme_content += f"# {repo_name}\n"
+    if repo_name is not None:
+        readme_content += f"# {repo_name}\n"
+
+    repo_name = repo_name if repo_name else get_repo_name()
 
     if include_dir_tree:
         dir_tree = directory_tree(path, make_links=include_links)
@@ -185,7 +186,6 @@ def main():
 
     args = parser.parse_args()
 
-    repo_name = args.repo if args.repo else get_repo_name()
     output_file = args.output if args.output else "README.md"
     readme_exists = os.path.exists(output_file)
     readme_content = generate_readme(
@@ -197,7 +197,7 @@ def main():
         args.header,
         args.footer,
         args.author,
-        repo_name,
+        args.repo,
         include_cli_usage=args.usage,
         use_nix_for_cli=args.use_nix_run,
     )
