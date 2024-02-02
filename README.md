@@ -39,7 +39,7 @@ options:
 ### Nix Flake Show
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=f90e5d64494cf246f100795d51b2a0fe30cef10a&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=a125acc7a9fdfdecfbc1a917887996026d4a4301&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
