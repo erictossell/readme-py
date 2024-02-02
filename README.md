@@ -1,5 +1,9 @@
 # readme-py
 
+[![Flake Check](https://github.com/erictossell/readme-py/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/check.yml)
+[![Flake Update](https://github.com/erictossell/readme-py/actions/workflows/update.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/update.yml)
+[![Readme Update](https://github.com/erictossell/readme-py/actions/workflows/readme.yml/badge.svg)](https://github.com/erictossell/readme-py/actions/workflows/readme.yml)
+
 A simple `python` script to generate a `README.md` file. Expose your project's structure and `cli` usage in a programmatic way.
 
 Easy to use in github actions, `nix` derivations, or any other `nix` build system.
@@ -57,7 +61,7 @@ options:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=4f806bc8518850675a9b01faa9b364f98ffb2536&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=8169d0ea99c0d5a9c54c3613f9da7a76cdeacd50&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
