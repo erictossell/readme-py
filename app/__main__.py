@@ -1,9 +1,4 @@
-import app
-
-
-def main():
-    app.main()
-
+from .readme import main
 
 if __name__ == "__main__":
-    app.main()
+    main()
