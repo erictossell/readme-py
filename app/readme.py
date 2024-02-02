@@ -63,9 +63,9 @@ def directory_tree(path, make_links=False):
         dir_name = os.path.basename(dir)
         dir_path = os.path.relpath(dir, path) if make_links else ""
         tree.append(
-            f"{indent}[{dir_name}]({dir_path}/)"
+            f"{indent}[{dir_name}]({dir_path}/)\n"
             if make_links
-            else f"{indent}{dir_name}/"
+            else f"{indent}{dir_name}/\n"
         )
     return "\n".join(tree)
 
@@ -103,7 +103,7 @@ def generate_readme(
         cli_usage_output = capture_cli_usage(
             path, repo_name or get_repo_name(), author, use_nix_for_cli
         )
-        readme_content += f"\n### CLI Usage\n\n```\n{cli_usage_output}\n```\n"
+        readme_content += f"\n### Usage\n\n```\n{cli_usage_output}\n```\n"
 
     if include_flake_info:
         flake_info_output = run_command(["nix", "flake", "info", "."])
