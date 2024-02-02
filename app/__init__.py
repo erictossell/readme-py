@@ -96,6 +96,7 @@ def generate_readme(
             existing_content = f.read()
 
     readme_content = existing_content
+
     if not repo_name and not existing_content:
         repo_name = get_repo_name()
     readme_content += f"# {repo_name}\n"
@@ -125,7 +126,7 @@ def generate_readme(
 
     if markdown_footer_file and os.path.exists(markdown_footer_file):
         with open(markdown_footer_file, "r") as f:
-            readme_content += f.read()
+            readme_content += "\n" + f.read()
 
     return readme_content
 

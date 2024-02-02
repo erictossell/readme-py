@@ -23,7 +23,7 @@ readme-py --dir --links --header header.md --nix
 ### Nix Flake Show
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=89a5479e63128c97119a3958a9ff46a3ac348788&shallow=1
+git+file:///home/eriim/repos/py/readme-py
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
@@ -53,3 +53,9 @@ git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=89a5479
         └───readme-py: package 'python3.11-readme-py-0.1.0'
 
 ```
+
+[![Flake Check](https://github.com/erictossell/readme-py/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/check.yml)
+
+[![Flake Update](https://github.com/erictossell/readme-py/actions/workflows/update.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/update.yml)
+
+[![Readme Update](https://github.com/erictossell/readme-py/actions/workflows/readme.yml/badge.svg)](https://github.com/erictossell/readme-py/actions/workflows/readme.yml)
