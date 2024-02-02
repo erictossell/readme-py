@@ -19,9 +19,9 @@ readme-py --dir --links --flake-show --header header.md --footer footer.md
 ### CLI Usage
 
 ```bash
-usage: readme-py [-h] [--dir] [--header HEADER] [--flake-show]
-                 [--author AUTHOR] [--title TITLE] [--links] [--usage]
-                 [--use-nix-build]
+usage: readme-py [-h] [--dir] [--header HEADER] [--footer FOOTER]
+                 [--flake-show] [--author AUTHOR] [--repo REPO] [--links]
+                 [--usage] [--use-nix-run] [--output OUTPUT]
 
 Generate README.md content.
 
@@ -29,19 +29,21 @@ options:
   -h, --help       show this help message and exit
   --dir            Include directory tree structure
   --header HEADER  Path to the header markdown file
+  --footer FOOTER  Path to the footer markdown file
   --flake-show     Include nix flake show output
   --author AUTHOR  GitHub username
-  --title TITLE    GitHub repository name
+  --repo REPO      GitHub repository name
   --links          Turn directory tree into Markdown links
   --usage          Include CLI application usage
-  --use-nix-build  Use nix to run the CLI help command
+  --use-nix-run    Use nix to run the CLI help command
+  --output OUTPUT  Output file to write to
 
 ```
 
 ### Nix Flake Show
 
 ```nix
-git+file:///home/eriim/repos/py/readme-py?ref=refs/heads/main&rev=d35d2a7db1e2703376a91ee6e0b7b2cbc731a927
+git+file:///home/eriim/repos/py/readme-py
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
