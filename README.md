@@ -3,6 +3,7 @@
 [![Flake Check](https://github.com/erictossell/readme-py/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/check.yml)
 [![Flake Update](https://github.com/erictossell/readme-py/actions/workflows/update.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/update.yml)
 [![Readme Update](https://github.com/erictossell/readme-py/actions/workflows/readme.yml/badge.svg)](https://github.com/erictossell/readme-py/actions/workflows/readme.yml)
+[![Python Tests](https://github.com/erictossell/readme-py/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/pytest.yml)
 
 A simple `python` script to generate a `README.md` file. Expose your project's structure and `cli` usage in a programmatic way.
 
@@ -61,7 +62,7 @@ options:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=aa82f3d7788aa7f25c48d73183c3d688fdd4a580&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=0521b3960f74004d0794f376456b7a1f149398c5&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
@@ -99,3 +100,4 @@ git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=aa82f3d
 [![Flake Check](https://github.com/erictossell/readme-py/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/check.yml)
 [![Flake Update](https://github.com/erictossell/readme-py/actions/workflows/update.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/update.yml)
 [![Readme Update](https://github.com/erictossell/readme-py/actions/workflows/readme.yml/badge.svg)](https://github.com/erictossell/readme-py/actions/workflows/readme.yml)
+[![Python Tests](https://github.com/erictossell/readme-py/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/pytest.yml)
