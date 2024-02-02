@@ -92,6 +92,9 @@ def generate_readme(
             existing_content = f.read()
 
     readme_content = existing_content + "\n"
+    if not repo_name and not existing_content:
+        repo_name = get_repo_name()
+    readme_content += f"# {repo_name}\n"
 
     if include_dir_tree:
         dir_tree = directory_tree(path, make_links=include_links)
