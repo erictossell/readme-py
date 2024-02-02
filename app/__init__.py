@@ -204,6 +204,6 @@ def main():
         f.write(readme_content)
 
     if readme_exists:
-        print(f"{output_file} existed and was overwritten.")
+        print(f"readme-py: {output_file} existed and was overwritten.")
     else:
-        print(f"{output_file} did not exist and was created.")
+        print(f"readme-py: {output_file} did not exist and was created.")

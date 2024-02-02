@@ -1,4 +1,4 @@
-name: Flake Check
+name: Python Tests
 
 on: 
   workflow_run:
@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  flake-check:
+  pytest:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,4 +21,7 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Flake update
-      run: nix flake check --all-systems
+      run: nix develop
+
+    - name: Run tests
+      run: poetry run pytest
