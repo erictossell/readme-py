@@ -122,7 +122,7 @@ def generate_readme(
         )
 
     if author:
-        readme_content += f"\n---\n\n👤 **{author}**\n"
+        readme_content += f"\n---\n\n👤 [**{author}**](https://github.com/{author})\n"
 
     if markdown_footer_file and os.path.exists(markdown_footer_file):
         with open(markdown_footer_file, "r") as f:
@@ -176,7 +176,6 @@ def main():
         repo_name,
         include_cli_usage=args.usage,
         use_nix_for_cli=args.use_nix_run,
-        output_file=args.output,
     )
 
     with open(output_file, "w") as f:

@@ -1,11 +1,13 @@
 # readme-py
 
-A simple python script to generate a README.md file.
+A simple `python` script to generate a `README.md` file. Expose your project's structure and `cli` usage in a programmatic way.
+
+Easy to use in github actions, `nix` derivations, or any other `nix` build system.
 
 ## Example
 
 ```bash
-readme-py --dir --links --header header.md --nix
+readme-py --dir --links --flake-show --header header.md --footer footer.md
 ```
 # readme-py
 
@@ -17,9 +19,9 @@ readme-py --dir --links --header header.md --nix
 ### CLI Usage
 
 ```bash
-usage: readme-py [-h] [--dir] [--header HEADER] [--footer FOOTER]
-                 [--flake-show] [--author AUTHOR] [--title TITLE] [--links]
-                 [--usage] [--use-nix-run]
+usage: readme-py [-h] [--dir] [--header HEADER] [--flake-show]
+                 [--author AUTHOR] [--title TITLE] [--links] [--usage]
+                 [--use-nix-build]
 
 Generate README.md content.
 
@@ -27,20 +29,19 @@ options:
   -h, --help       show this help message and exit
   --dir            Include directory tree structure
   --header HEADER  Path to the header markdown file
-  --footer FOOTER  Path to the footer markdown file
   --flake-show     Include nix flake show output
   --author AUTHOR  GitHub username
   --title TITLE    GitHub repository name
   --links          Turn directory tree into Markdown links
   --usage          Include CLI application usage
-  --use-nix-run    Use nix to run the CLI help command
+  --use-nix-build  Use nix to run the CLI help command
 
 ```
 
 ### Nix Flake Show
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=4411d9073bf16437bc75236a8e22ce76963af687&shallow=1
+git+file:///home/eriim/repos/py/readme-py
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
@@ -73,10 +74,8 @@ git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=4411d90
 
 ---
 
-👤 **erictossell**
+👤 [**erictossell**](https://github.com/erictossell)
 
 [![Flake Check](https://github.com/erictossell/readme-py/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/check.yml)
-
 [![Flake Update](https://github.com/erictossell/readme-py/actions/workflows/update.yml/badge.svg?branch=main)](https://github.com/erictossell/readme-py/actions/workflows/update.yml)
-
 [![Readme Update](https://github.com/erictossell/readme-py/actions/workflows/readme.yml/badge.svg)](https://github.com/erictossell/readme-py/actions/workflows/readme.yml)
