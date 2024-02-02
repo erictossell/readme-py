@@ -16,15 +16,18 @@ def run_command(command):
     return strip_ansi_sequences(result.stdout)
 
 
-def capture_cli_usage(project_root, app_name, use_nix=False):
+def capture_cli_usage(project_root, repo_name, author, use_nix=False):
     """Dynamically determine and run the `--help` command for the project."""
     if use_nix:
         # Directly specifying the command for nix projects
-        command = "nix build"
-        run_command(command)
+        command = f"nix run github:{author}/{repo_name} -- --help"
+        try:
+            return run_command(command)
+        except subprocess.CalledProcessError as e:
+            return f"Error running command: {e}"
 
     # Assuming `project_root` has an executable CLI application
-    command = f"{os.path.join(project_root, f'result/bin/{app_name}')} --help"
+    command = f"{os.path.join(project_root, f'result/bin/{repo_name}')} --help"
     try:
         return run_command(command)
     except subprocess.CalledProcessError as e:
@@ -91,7 +94,7 @@ def generate_readme(
         with open(markdown_prefix_file, "r") as f:
             existing_content = f.read()
 
-    readme_content = existing_content + "\n"
+    readme_content = existing_content
     if not repo_name and not existing_content:
         repo_name = get_repo_name()
     readme_content += f"# {repo_name}\n"
@@ -105,7 +108,9 @@ def generate_readme(
         )
 
     if include_cli_usage:
-        cli_usage_output = capture_cli_usage(path, repo_name, use_nix=use_nix_for_cli)
+        cli_usage_output = capture_cli_usage(
+            path, repo_name, author, use_nix=use_nix_for_cli
+        )
         readme_content += "\n### CLI Usage\n\n```bash\n" + cli_usage_output + "\n```\n"
 
     if include_nix:
@@ -138,7 +143,7 @@ def main():
         "--usage", help="Include CLI application usage", action="store_true"
     )
     parser.add_argument(
-        "--use-nix-build",
+        "--use-nix-run",
         help="Use nix to run the CLI help command",
         action="store_true",
     )
@@ -155,7 +160,7 @@ def main():
         args.author,
         repo_name,
         include_cli_usage=args.usage,
-        use_nix_for_cli=args.use_nix_build,
+        use_nix_for_cli=args.use_nix_run,
     )
 
     with open("README.md", "w") as f:
