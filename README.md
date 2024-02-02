@@ -25,10 +25,8 @@ nix run github:erictossell/readme-py -- --output TEST.md --author erictossell --
 
 ### Directory Structure
 
-[app](app/)
-
-[test](test/)
-
+- [app/](app/)
+- [test/](test/)
 
 ### Usage
 
@@ -63,15 +61,15 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16a340a475bd757d7129070c59d340fe8b783e71&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=15d96190511982109693855c790522c620991633&shallow=1
 Description:   Readme generator
-Path:          /nix/store/idvfid54xyj8pgq03zhqxcyq6v8x9cv1-source
-Revision:      16a340a475bd757d7129070c59d340fe8b783e71
-Last modified: 2024-02-02 05:09:29
+Path:          /nix/store/72p5vvx3rcpg54fzf2wxhzy8cbz634j0-source
+Revision:      15d96190511982109693855c790522c620991633
+Last modified: 2024-02-02 23:05:39
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/97b17f32362e475016f942bbdfda4a4a72a8a652
+├───nixpkgs: github:NixOS/nixpkgs/b8b232ae7b8b144397fdb12d20f592e5e7c1a64d
 └───poetry2nix: github:nix-community/poetry2nix/e0b44e9e2d3aa855d1dd77b06f067cd0e0c3860d
     ├───flake-utils: github:numtide/flake-utils/ff7b65b44d01cf9ba6a71320833626af21126384
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
@@ -87,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16a340a475bd757d7129070c59d340fe8b783e71&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=15d96190511982109693855c790522c620991633&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
