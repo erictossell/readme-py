@@ -22,8 +22,8 @@ jobs:
       with: 
         nix_path: nixpkgs=channel:nixos-unstable
 
-    - name: Flake update
-      run: nix develop
+    - name: Nix develop
+      run: |
+        nix develop
+        poetry run pytest
 
-    - name: Run tests
-      run: poetry run pytest
