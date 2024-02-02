@@ -41,6 +41,7 @@ options:
 ### Nix Flake Show
 
 ```nix
+git+file:///home/eriim/repos/py/readme-py?ref=refs/heads/main&rev=d35d2a7db1e2703376a91ee6e0b7b2cbc731a927
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
