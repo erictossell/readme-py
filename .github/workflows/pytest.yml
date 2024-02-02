@@ -2,15 +2,17 @@ name: Python Tests
 
 on: 
   workflow_run:
-    workflows: ["Flake Update"]
+    workflows: ["Flake Check"]
     types:
       - completed
 
 jobs:
   pytest:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v4

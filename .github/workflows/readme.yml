@@ -2,7 +2,7 @@ name: Readme Update
 
 on: 
   workflow_run:
-    workflows: ["Flake Check"]
+    workflows: ["Python Tests"]
     types:
       - completed
 
