@@ -15,5 +15,5 @@ readme-py --dir --links --flake-show --header header.md --footer footer.md
 An example generation of a `README.md` can be generated with the following command:
 
 ```bash
-nix run github:erictossell/readme-py -- --author erictossell --repo readme-py --dir --links --usage --flake-info --flake-show --header header.md --footer footer.md 
+nix run github:erictossell/readme-py -- --output TEST.md --author erictossell --repo readme-py --dir --links --usage --flake-info --flake-show --header header.md --footer footer.md
 ```
