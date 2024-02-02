@@ -141,30 +141,39 @@ def generate_readme(
 def main():
     parser = argparse.ArgumentParser(description="Generate README.md content.")
     parser.add_argument(
-        "--dir", help="Include directory tree structure", action="store_true"
-    )
-    parser.add_argument("--header", help="Path to the header markdown file", type=str)
-    parser.add_argument("--footer", help="Path to the footer markdown file", type=str)
-    parser.add_argument(
-        "--flake-show", help="Include nix flake show output", action="store_true"
+        "-d", "--dir", help="Include directory tree structure", action="store_true"
     )
     parser.add_argument(
-        "--flake-info", help="Include nix flake info output", action="store_true"
-    )
-    parser.add_argument("--author", help="GitHub username", type=str)
-    parser.add_argument("--repo", help="GitHub repository name", type=str)
-    parser.add_argument(
-        "--links", help="Turn directory tree into Markdown links", action="store_true"
+        "-hmd", "--header", help="Path to the header markdown file", type=str
     )
     parser.add_argument(
-        "--usage", help="Include CLI application usage", action="store_true"
+        "-fmd", "--footer", help="Path to the footer markdown file", type=str
     )
     parser.add_argument(
+        "-fs", "--flake-show", help="Include nix flake show output", action="store_true"
+    )
+    parser.add_argument(
+        "-fi", "--flake-info", help="Include nix flake info output", action="store_true"
+    )
+    parser.add_argument("-a", "--author", help="GitHub username", type=str)
+    parser.add_argument("-r", "--repo", help="GitHub repository name", type=str)
+    parser.add_argument(
+        "-l",
+        "--links",
+        help="Turn directory tree into Markdown links",
+        action="store_true",
+    )
+    parser.add_argument(
+        "-u", "--usage", help="Include CLI application usage", action="store_true"
+    )
+    parser.add_argument(
+        "-unr",
         "--use-nix-run",
         help="Use nix to run the CLI help command, requires an author",
         action="store_true",
     )
     parser.add_argument(
+        "-o",
         "--output",
         help="Output file to write to",
         type=str,
