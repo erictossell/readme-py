@@ -142,7 +142,7 @@ def main():
         "--flake-show", help="Include nix flake show output", action="store_true"
     )
     parser.add_argument("--author", help="GitHub username", type=str)
-    parser.add_argument("--title", help="GitHub repository name", type=str)
+    parser.add_argument("--repo", help="GitHub repository name", type=str)
     parser.add_argument(
         "--links", help="Turn directory tree into Markdown links", action="store_true"
     )
@@ -154,10 +154,17 @@ def main():
         help="Use nix to run the CLI help command",
         action="store_true",
     )
+    parser.add_argument(
+        "--output",
+        help="Output file to write to",
+        type=str,
+        default="README.md",
+    )
     args = parser.parse_args()
 
-    repo_name = args.title if args.title else get_repo_name()
-    readme_exists = os.path.exists("README.md")
+    repo_name = args.repo if args.repo else get_repo_name()
+    output_file = args.output if args.output else "README.md"
+    readme_exists = os.path.exists(output_file)
     readme_content = generate_readme(
         ".",
         args.dir,
@@ -169,12 +176,13 @@ def main():
         repo_name,
         include_cli_usage=args.usage,
         use_nix_for_cli=args.use_nix_run,
+        output_file=args.output,
     )
 
-    with open("README.md", "w") as f:
+    with open(output_file, "w") as f:
         f.write(readme_content)
 
     if readme_exists:
-        print("README.md existed and was overwritten.")
+        print(f"{output_file} existed and was overwritten.")
     else:
-        print("README.md did not exist and was created.")
+        print(f"{output_file} did not exist and was created.")
