@@ -22,8 +22,10 @@ jobs:
       with: 
         nix_path: nixpkgs=channel:nixos-unstable
 
-    - name: Nix develop
+    - name: Poetry install
       run: |
-        nix develop
-        poetry run pytest
-
+        nix-shell -p poetry --run "poetry install"
+       
+    - name: Run tests
+      run: |
+        nix-shell -p poetry --run "poetry run pytest"
