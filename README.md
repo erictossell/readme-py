@@ -54,36 +54,10 @@ options:
 
 ```
 
-### Flake Info
-
-```nix
-Resolved URL:  git+file:///home/eriim/repos/py/readme-py
-Locked URL:    git+file:///home/eriim/repos/py/readme-py?ref=refs/heads/main&rev=38bff41c052f10a3f1f59e87e09a894390fc2b8d
-Description:   Readme generator
-Path:          /nix/store/9q7f5c0cwd2izs3kg8k8lgj68najgc1n-source
-Revision:      38bff41c052f10a3f1f59e87e09a894390fc2b8d
-Revisions:     43
-Last modified: 2024-02-01 23:09:07
-Inputs:
-├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
-│   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/97b17f32362e475016f942bbdfda4a4a72a8a652
-└───poetry2nix: github:nix-community/poetry2nix/e0b44e9e2d3aa855d1dd77b06f067cd0e0c3860d
-    ├───flake-utils: github:numtide/flake-utils/ff7b65b44d01cf9ba6a71320833626af21126384
-    │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-    ├───nix-github-actions: github:nix-community/nix-github-actions/4bb5e752616262457bc7ca5882192a564c0472d2
-    │   └───nixpkgs follows input 'poetry2nix/nixpkgs'
-    ├───nixpkgs follows input 'nixpkgs'
-    ├───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-    └───treefmt-nix: github:numtide/treefmt-nix/e82f32aa7f06bbbd56d7b12186d555223dc399d1
-        └───nixpkgs follows input 'poetry2nix/nixpkgs'
-
-```
-
 ### Flake Outputs
 
 ```nix
-git+file:///home/eriim/repos/py/readme-py?ref=refs/heads/main&rev=38bff41c052f10a3f1f59e87e09a894390fc2b8d
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=4f806bc8518850675a9b01faa9b364f98ffb2536&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
