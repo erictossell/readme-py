@@ -23,16 +23,14 @@ An example generation of a `README.md` can be generated with the following comma
 nix run github:erictossell/readme-py -- --output TEST.md --author erictossell --repo readme-py --dir --links --usage --flake-info --flake-show --header header.md --footer footer.md
 ```
 
-### Directory
+### Directory Structure
 
 [app](app/)
-
 [test](test/)
 
+### CLI Usage
 
-### Usage
-
-```bash
+```
 usage: readme-py [-h] [-a AUTHOR] [-r REPO] [-o OUTPUT] [-d] [-l] [-u] [-fs]
                  [-fi] [-hmd HEADER] [-fmd FOOTER] [-unr]
 
@@ -54,7 +52,7 @@ options:
                         Path to a header markdown file
   -fmd FOOTER, --footer FOOTER
                         Path to a footer markdown file
-  -unr, --use-nix-run   Use nix and github to run the CLI help command,
+  -unr, --use-nix-run   Use nix and GitHub to run the CLI help command,
                         requires an author
 
 ```
@@ -62,7 +60,7 @@ options:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=0521b3960f74004d0794f376456b7a1f149398c5&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=8efeb4e49d5db7d2fee9f79b77bf7a9e9b21530c&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
