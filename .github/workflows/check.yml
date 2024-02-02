@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  update:
+  flake-check:
     runs-on: ubuntu-latest
     permissions:
       contents: write

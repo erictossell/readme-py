@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  update:
+  readme-update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
