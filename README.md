@@ -61,11 +61,11 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=15d96190511982109693855c790522c620991633&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=a68754654d7fb595890f3973673cbaa71f386a6e&shallow=1
 Description:   Readme generator
-Path:          /nix/store/72p5vvx3rcpg54fzf2wxhzy8cbz634j0-source
-Revision:      15d96190511982109693855c790522c620991633
-Last modified: 2024-02-02 23:05:39
+Path:          /nix/store/fch1zbvsch6symw1fy806vkrjrfhhcsb-source
+Revision:      a68754654d7fb595890f3973673cbaa71f386a6e
+Last modified: 2024-02-02 23:21:19
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
@@ -85,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=15d96190511982109693855c790522c620991633&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=a68754654d7fb595890f3973673cbaa71f386a6e&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
