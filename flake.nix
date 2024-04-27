@@ -20,7 +20,7 @@
       {
         packages = {
           readme-py = mkPoetryApplication {
-            projectDir = self;
+            projectDir = ./.;
             overrides = overrides.withDefaults (self: super: {
               argparse = super.argparse.overridePythonAttrs (
                 old: {
@@ -29,8 +29,7 @@
                   ];
                 }
               );
-            })
-            ;
+            });
           };
           default = self.packages.${system}.readme-py;
         };
