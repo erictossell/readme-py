@@ -61,23 +61,23 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=5cffbc7d1554e2ad93a34d9b21522a24535a3226&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=bb2f0644e9acfe98e6e942f54d50ff6da73b4d40&shallow=1
 Description:   Readme generator
-Path:          /nix/store/7izdh1d554b17ybzkv8y1klcb3k6zx7b-source
-Revision:      5cffbc7d1554e2ad93a34d9b21522a24535a3226
-Last modified: 2024-04-27 13:55:45
+Path:          /nix/store/g8krydj81nbf4s611yvqv6q7mzcb5npx-source
+Revision:      bb2f0644e9acfe98e6e942f54d50ff6da73b4d40
+Last modified: 2024-05-05 00:10:58
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/b1d9ab70662946ef0850d488da1c9019f3a9752a
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/7bb2ccd8cdc44c91edba16c48d2c8f331fb3d856
-└───poetry2nix: github:nix-community/poetry2nix/9245811b58905453033f1ef551f516cbee71c42c
-    ├───flake-utils: github:numtide/flake-utils/1ef2e671c3b0c19053962c07dbda38332dcebf26
+├───nixpkgs: github:NixOS/nixpkgs/63c3a29ca82437c87573e4c6919b09a24ea61b0f
+└───poetry2nix: github:nix-community/poetry2nix/c8766d12a9efd0467998b887d6de6d838091f2b9
+    ├───flake-utils: github:numtide/flake-utils/b1d9ab70662946ef0850d488da1c9019f3a9752a
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
     ├───nix-github-actions: github:nix-community/nix-github-actions/5163432afc817cf8bd1f031418d1869e4c9d5547
     │   └───nixpkgs follows input 'poetry2nix/nixpkgs'
     ├───nixpkgs follows input 'nixpkgs'
     ├───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-    └───treefmt-nix: github:numtide/treefmt-nix/e504621290a1fd896631ddbc5e9c16f4366c9f65
+    └───treefmt-nix: github:numtide/treefmt-nix/c6aaf729f34a36c445618580a9f95a48f5e4e03f
         └───nixpkgs follows input 'poetry2nix/nixpkgs'
 
 ```
@@ -85,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=5cffbc7d1554e2ad93a34d9b21522a24535a3226&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=bb2f0644e9acfe98e6e942f54d50ff6da73b4d40&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
