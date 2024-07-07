@@ -61,23 +61,23 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=1e3bca19bfc96d7378cebd02e6e6f7efc2c956fd&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16576a841935d862e771abed1433b98144e31861&shallow=1
 Description:   Readme generator
-Path:          /nix/store/y291s6l3axqzx52fczb36d3rywmlgsw9-source
-Revision:      1e3bca19bfc96d7378cebd02e6e6f7efc2c956fd
-Last modified: 2024-06-30 00:11:50
+Path:          /nix/store/yxwv0ikcx84sxy9k0138swsprsffqw6y-source
+Revision:      16576a841935d862e771abed1433b98144e31861
+Last modified: 2024-07-07 00:11:52
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/b1d9ab70662946ef0850d488da1c9019f3a9752a
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/b2852eb9365c6de48ffb0dc2c9562591f652242a
-└───poetry2nix: github:nix-community/poetry2nix/4fd045cdb85f2a0173021a4717dc01d92d7ab2b2
+├───nixpkgs: github:NixOS/nixpkgs/9f4128e00b0ae8ec65918efeba59db998750ead6
+└───poetry2nix: github:nix-community/poetry2nix/42262f382c68afab1113ebd1911d0c93822d756e
     ├───flake-utils: github:numtide/flake-utils/b1d9ab70662946ef0850d488da1c9019f3a9752a
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
     ├───nix-github-actions: github:nix-community/nix-github-actions/5163432afc817cf8bd1f031418d1869e4c9d5547
     │   └───nixpkgs follows input 'poetry2nix/nixpkgs'
     ├───nixpkgs follows input 'nixpkgs'
     ├───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-    └───treefmt-nix: github:numtide/treefmt-nix/68eb1dc333ce82d0ab0c0357363ea17c31ea1f81
+    └───treefmt-nix: github:numtide/treefmt-nix/8df5ff62195d4e67e2264df0b7f5e8c9995fd0bd
         └───nixpkgs follows input 'poetry2nix/nixpkgs'
 
 ```
@@ -85,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=1e3bca19bfc96d7378cebd02e6e6f7efc2c956fd&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16576a841935d862e771abed1433b98144e31861&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
