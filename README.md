@@ -61,15 +61,15 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16576a841935d862e771abed1433b98144e31861&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=5bfc3f5634cab222438f24989e09787fb465f16c&shallow=1
 Description:   Readme generator
-Path:          /nix/store/yxwv0ikcx84sxy9k0138swsprsffqw6y-source
-Revision:      16576a841935d862e771abed1433b98144e31861
-Last modified: 2024-07-07 00:11:52
+Path:          /nix/store/vg546h45jppqhblirp0f3zsmd3r80m4w-source
+Revision:      5bfc3f5634cab222438f24989e09787fb465f16c
+Last modified: 2024-07-14 00:12:18
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/b1d9ab70662946ef0850d488da1c9019f3a9752a
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/9f4128e00b0ae8ec65918efeba59db998750ead6
+├───nixpkgs: github:NixOS/nixpkgs/7e7c39ea35c5cdd002cd4588b03a3fb9ece6fad9
 └───poetry2nix: github:nix-community/poetry2nix/42262f382c68afab1113ebd1911d0c93822d756e
     ├───flake-utils: github:numtide/flake-utils/b1d9ab70662946ef0850d488da1c9019f3a9752a
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
@@ -85,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16576a841935d862e771abed1433b98144e31861&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=5bfc3f5634cab222438f24989e09787fb465f16c&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
@@ -102,17 +102,17 @@ git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=16576a8
 │   └───x86_64-linux: package 'nixpkgs-fmt-1.3.0'
 └───packages
     ├───aarch64-darwin
-    │   ├───default: package 'python3.11-readme-py-0.1.0'
-    │   └───readme-py: package 'python3.11-readme-py-0.1.0'
+    │   ├───default: package 'python3.12-readme-py-0.1.0'
+    │   └───readme-py: package 'python3.12-readme-py-0.1.0'
     ├───aarch64-linux
-    │   ├───default: package 'python3.11-readme-py-0.1.0'
-    │   └───readme-py: package 'python3.11-readme-py-0.1.0'
+    │   ├───default: package 'python3.12-readme-py-0.1.0'
+    │   └───readme-py: package 'python3.12-readme-py-0.1.0'
     ├───x86_64-darwin
-    │   ├───default: package 'python3.11-readme-py-0.1.0'
-    │   └───readme-py: package 'python3.11-readme-py-0.1.0'
+    │   ├───default: package 'python3.12-readme-py-0.1.0'
+    │   └───readme-py: package 'python3.12-readme-py-0.1.0'
     └───x86_64-linux
-        ├───default: package 'python3.11-readme-py-0.1.0'
-        └───readme-py: package 'python3.11-readme-py-0.1.0'
+        ├───default: package 'python3.12-readme-py-0.1.0'
+        └───readme-py: package 'python3.12-readme-py-0.1.0'
 
 ```
 
