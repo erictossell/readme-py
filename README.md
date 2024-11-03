@@ -61,23 +61,23 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=73cd6401e40c6c4a4f2b512d14b4b47fc78c4a07&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=847960a7ee417c7a9ec672c95899da40a226f25a&shallow=1
 Description:   Readme generator
-Path:          /nix/store/ps1inlwl36q73gicm0xs9kamj6lknw1h-source
-Revision:      73cd6401e40c6c4a4f2b512d14b4b47fc78c4a07
-Last modified: 2024-10-27 00:13:59
+Path:          /nix/store/gnyxs8c6a00nvlblgmnkimrcknv9gs54-source
+Revision:      847960a7ee417c7a9ec672c95899da40a226f25a
+Last modified: 2024-11-03 00:13:57
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/2768c7d042a37de65bb1b5b3268fc987e534c49d
-└───poetry2nix: github:nix-community/poetry2nix/bd042208f7972e787089db39a43726b70228148d
+├───nixpkgs: github:NixOS/nixpkgs/807e9154dcb16384b1b765ebe9cd2bba2ac287fd
+└───poetry2nix: github:nix-community/poetry2nix/43a898b4d76f7f3f70df77a2cc2d40096bc9d75e
     ├───flake-utils: github:numtide/flake-utils/c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-    ├───nix-github-actions: github:nix-community/nix-github-actions/622f829f5fe69310a866c8a6cd07e747c44ef820
+    ├───nix-github-actions: github:nix-community/nix-github-actions/e04df33f62cdcf93d73e9a04142464753a16db67
     │   └───nixpkgs follows input 'poetry2nix/nixpkgs'
     ├───nixpkgs follows input 'nixpkgs'
     ├───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-    └───treefmt-nix: github:numtide/treefmt-nix/4446c7a6fc0775df028c5a3f6727945ba8400e64
+    └───treefmt-nix: github:numtide/treefmt-nix/9ef337e492a5555d8e17a51c911ff1f02635be15
         └───nixpkgs follows input 'poetry2nix/nixpkgs'
 
 ```
@@ -85,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=73cd6401e40c6c4a4f2b512d14b4b47fc78c4a07&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=847960a7ee417c7a9ec672c95899da40a226f25a&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
