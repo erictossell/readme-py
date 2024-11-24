@@ -61,15 +61,15 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=1ecaba324f5912d2dcf9eedaf6d7dc52146f9bb7&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=ec97e7861551ec05b7fb33efadcf7d7f68cdd9d1&shallow=1
 Description:   Readme generator
-Path:          /nix/store/v8a7hg318lw793yi197gff4cma5fmvjv-source
-Revision:      1ecaba324f5912d2dcf9eedaf6d7dc52146f9bb7
-Last modified: 2024-11-17 00:14:32
+Path:          /nix/store/mmkq4lhbq7rhwswg804h3ld4k70bglmz-source
+Revision:      ec97e7861551ec05b7fb33efadcf7d7f68cdd9d1
+Last modified: 2024-11-24 00:14:34
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/5e4fbfb6b3de1aa2872b76d49fafc942626e2add
+├───nixpkgs: github:NixOS/nixpkgs/23e89b7da85c3640bbc2173fe04f4bd114342367
 └───poetry2nix: github:nix-community/poetry2nix/f554d27c1544d9c56e5f1f8e2b8aff399803674e
     ├───flake-utils: github:numtide/flake-utils/c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
@@ -85,7 +85,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=1ecaba324f5912d2dcf9eedaf6d7dc52146f9bb7&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=ec97e7861551ec05b7fb33efadcf7d7f68cdd9d1&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
