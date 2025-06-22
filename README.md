@@ -38,19 +38,17 @@ Generate README.md content.
 
 options:
   -h, --help            show this help message and exit
-  -a AUTHOR, --author AUTHOR
-                        GitHub username
-  -r REPO, --repo REPO  GitHub repository name
-  -o OUTPUT, --output OUTPUT
-                        Output file to write to, defaults to README.md
+  -a, --author AUTHOR   GitHub username
+  -r, --repo REPO       GitHub repository name
+  -o, --output OUTPUT   Output file to write to, defaults to README.md
   -d, --dir             Include directory tree structure
   -l, --links           Turn directory tree into Markdown links
   -u, --usage           Include CLI application usage by building with nix
   -fs, --flake-show     Include nix flake show output
   -fi, --flake-info     Include nix flake info output
-  -hmd HEADER, --header HEADER
+  -hmd, --header HEADER
                         Path to a header markdown file
-  -fmd FOOTER, --footer FOOTER
+  -fmd, --footer FOOTER
                         Path to a footer markdown file
   -unr, --use-nix-run   Use nix and GitHub to run the CLI help command,
                         requires an author
@@ -61,15 +59,15 @@ options:
 
 ```nix
 Resolved URL:  git+file:///home/runner/work/readme-py/readme-py?shallow=1
-Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=7271f3825913aa0b6537621253c408458847f34f&shallow=1
+Locked URL:    git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=d4e4a7466fa6a3fe6ff049beeab325a80258d678&shallow=1
 Description:   Readme generator
-Path:          /nix/store/abgf35vazq0xcr5iq7knvnvcabiz5f4h-source
-Revision:      7271f3825913aa0b6537621253c408458847f34f
-Last modified: 2025-06-15 00:16:53
+Path:          /nix/store/fpwwm4cvjlgyxaslnsib88dwax8mw6f2-source
+Revision:      d4e4a7466fa6a3fe6ff049beeab325a80258d678
+Last modified: 2025-06-22 00:16:39
 Inputs:
 ├───flake-utils: github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b
 │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
-├───nixpkgs: github:NixOS/nixpkgs/ee930f9755f58096ac6e8ca94a1887e0534e2d81
+├───nixpkgs: github:NixOS/nixpkgs/08f22084e6085d19bcfb4be30d1ca76ecb96fe54
 └───poetry2nix: github:nix-community/poetry2nix/ce2369db77f45688172384bbeb962bc6c2ea6f94
     ├───flake-utils: github:numtide/flake-utils/c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a
     │   └───systems: github:nix-systems/default/da67096a3b9bf56a91d16901293e51ba5b49a27e
@@ -85,7 +83,7 @@ Inputs:
 ### Flake Outputs
 
 ```nix
-git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=7271f3825913aa0b6537621253c408458847f34f&shallow=1
+git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=d4e4a7466fa6a3fe6ff049beeab325a80258d678&shallow=1
 ├───devShells
 │   ├───aarch64-darwin
 │   │   └───default: development environment 'nix-shell'
@@ -102,17 +100,17 @@ git+file:///home/runner/work/readme-py/readme-py?ref=refs/heads/main&rev=7271f38
 │   └───x86_64-linux: package 'nixpkgs-fmt-1.3.0'
 └───packages
     ├───aarch64-darwin
-    │   ├───default: package 'python3.12-readme-py-0.1.0'
-    │   └───readme-py: package 'python3.12-readme-py-0.1.0'
+    │   ├───default: package 'python3.13-readme-py-0.1.0'
+    │   └───readme-py: package 'python3.13-readme-py-0.1.0'
     ├───aarch64-linux
-    │   ├───default: package 'python3.12-readme-py-0.1.0'
-    │   └───readme-py: package 'python3.12-readme-py-0.1.0'
+    │   ├───default: package 'python3.13-readme-py-0.1.0'
+    │   └───readme-py: package 'python3.13-readme-py-0.1.0'
     ├───x86_64-darwin
-    │   ├───default: package 'python3.12-readme-py-0.1.0'
-    │   └───readme-py: package 'python3.12-readme-py-0.1.0'
+    │   ├───default: package 'python3.13-readme-py-0.1.0'
+    │   └───readme-py: package 'python3.13-readme-py-0.1.0'
     └───x86_64-linux
-        ├───default: package 'python3.12-readme-py-0.1.0'
-        └───readme-py: package 'python3.12-readme-py-0.1.0'
+        ├───default: package 'python3.13-readme-py-0.1.0'
+        └───readme-py: package 'python3.13-readme-py-0.1.0'
 
 ```
 
